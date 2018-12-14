@@ -9,6 +9,9 @@
     border-bottom: 1px solid black;
 
     .header-wrapper {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
         width: 100%;
         height: 100%;
         padding: 10px;

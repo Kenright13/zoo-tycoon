@@ -4,47 +4,84 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-arond;
+    justify-content: center;
     width: 100%;
     height: 100%;
-    margin-top: 100px;
         
     .home-view-menu {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        height: 50vh;
+        height: 50%;
+        width: 50%;
         
         .home-menu-option {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            border: 1px solid $blue;
+            border: 2px solid $blue;
             padding: 20px;
+            margin-bottom: 50px;
+            border-radius: 20px;
+            width: 100%;
             flex: 1;
             color: $blue;
             cursor: pointer;
             transition: all 0.5s linear;
 
+            #select-city {
+                width: 50%;
+                height: 30px;
+            }
+
             &:hover {
                 background-color: rgba(53, 235, 123, 0.1);
-                border: 1px solid $forest;
+                border: 2px solid $forest;
                 color: $forest;
             }
 
-            &.collapse {
-                display: none;
+            &.selected {
+                background-color: rgba(53, 235, 123, 0.1);
+                border: 2px solid $forest;
+                color: $forest;
+
+                .menu-option-label {
+                    padding-bottom: 20px;
+                    transition: padding 0.5s linear;
+                }
+
+                .input-field {
+                    display: flex;
+                    
+                }
             }
 
-            &.expand {
-                height: 100%;
+            .input-field {
+                display: none;
+                border-radius: 10px;
+                border: 1px solid $forest;
+                caret-color: $forest;
+                text-indent: 10px;
+                font-size: 20px;
+                color: $forest;
+                min-height: 30px;
+
+                option.unaffordable {
+                    color: red;
+                }
+
+                &:focus {
+                    outline: none;
+                    text-decoration: none;
+                }
             }
 
             .menu-option-label {
-                
+                font-weight: bold;
             }
             .menu-option-value {
-
+                margin: 10px 0;
             }
         }
     }

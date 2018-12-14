@@ -1,4 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <app-header [location]="getCurrentLocation()"></app-header>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<div class="page-wrapper" *ngIf="!isLocation()">
+    <app-home [totalMoney]="business.money" (chooseLocation)="setCurrentLocation($event)" (named)="setBusinessName($event)"></app-home>
+</div>
+<div class="page-wrapper" *ngIf="isLocation()">
+    <app-locations [location]="getCurrentLocation()"></app-locations>
+</div>
+
+<app-footer [name]="business.name"></app-footer>

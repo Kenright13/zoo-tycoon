@@ -1,8 +1,10 @@
 <div class="header-container">
-  <div class="header-wrapper no-location" [class.hidden]="isLocationSet()">
+  <div class="header-wrapper no-location" *ngIf="!isLocationSet()">
     <div class="title">{{ title }}</div>
   </div>
-  <div class="header-wrapper" [class.hidden]="!isLocationSet()">
-    <h1>Yes location</h1>
+  <div class="header-wrapper" *ngIf="isLocationSet()">
+    <div class="cash">{{ location.money | currency }}</div>
+    <div class="title">{{ location.name }}</div>
+    <div class="time">10:00 A.M.</div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { LOCATIONS } from './assets/data/locations';
 
@@ -12,13 +12,36 @@ import { Business } from './classes/business';
 })
 
 export class AppComponent {
+  ngOnInit() {
+    this.isLocation();
+  }
+
   business: Business = {
     name: 'My Business',
-    money: 0,
+    money: 6000,
+    loans: [
+      { amount: 6000, duration: 60, rate: 0.05 }
+    ],
     locations: LOCATIONS
   }
+
   currentLocation: string;
   title = 'zoo-tycoon';
+
+  setBusinessName(name: string): void {
+    this.business.name = name;
+  }
+
+  setCurrentLocation(location: string): void {
+    this.currentLocation = location;
+  }
+
+  isLocation(): boolean {
+    if (this.getCurrentLocation() != null) {
+      return true;
+    }
+    return false;
+  }
 
   getCurrentLocation(): Location {
     if (!this.currentLocation) {

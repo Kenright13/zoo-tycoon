@@ -1,7 +1,9 @@
 import { Location } from './location';
+import { Loan } from './loan';
 
 export class Business {
     name: string;
     money: number;
-    locations: Array<Location>
+    loans: Array<Loan>;
+    locations: Array<Location>;
 }

@@ -1,18 +1,24 @@
 <div class="home-view-container">
   <div class="home-view-menu">
       <div class="home-menu-option"
-           [class.collapse]="selectedOption === 'location'"
-           [class.expand]="selectedOption === 'name'"
+           [class.selected]="selectedOption === 'name'"
            (click)="setSelectedOption('name')">
-      <div class="menu-option-label">Name Your Business</div>
-      <div class="menu-option-value">{{ businessName }}</div>
+        <div class="menu-option-label">Name Your Business</div>
+        <div *ngIf="name" [@enterAnimation] class="menu-option-value">{{ name }}</div>
+        <input [(ngModel)]="name" class="input-field" />
     </div>
     <div class="home-menu-option"
-         [class.collapse]="selectedOption === 'name'"
-         [class.expand]="selectedOption === 'location'"
+         [class.selected]="selectedOption === 'location'"
          (click)="setSelectedOption('location')">
         <div class="menu-option-label">Choose Your Location</div>
-        <div class="menu-option-value">{{ businessLocation }}</div>
+        <div class="menu-option-value">{{ location }}</div>
+        <select [(ngModel)]="location" class="input-field">
+          <option *ngFor="let location of locations" 
+                  [value]="location.name"
+                  [class.unaffordable]="location.cost > totalMoney">{{ location.name }} - {{ location.cost | currency }}</option>
+        </select>
     </div>
   </div>
+
+  <button (click)="startGame()">Save</button>
 </div>
