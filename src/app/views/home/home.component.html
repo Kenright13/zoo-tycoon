@@ -1,3 +1,18 @@
-<p>
-  home works!
-</p>
+<div class="home-view-container">
+  <div class="home-view-menu">
+      <div class="home-menu-option"
+           [class.collapse]="selectedOption === 'location'"
+           [class.expand]="selectedOption === 'name'"
+           (click)="setSelectedOption('name')">
+      <div class="menu-option-label">Name Your Business</div>
+      <div class="menu-option-value">{{ businessName }}</div>
+    </div>
+    <div class="home-menu-option"
+         [class.collapse]="selectedOption === 'name'"
+         [class.expand]="selectedOption === 'location'"
+         (click)="setSelectedOption('location')">
+        <div class="menu-option-label">Choose Your Location</div>
+        <div class="menu-option-value">{{ businessLocation }}</div>
+    </div>
+  </div>
+</div>
