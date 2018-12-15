@@ -1,9 +1,12 @@
 const ANIMAL_NAMES: any = {
-    ANT: 'Ant'
+    BUGS: {
+        ANT: 'Ant',
+        BEETLE: 'Beetle'
+    } 
 }
 
 const ANIMAL_TYPES: any = {
-    BUG: 'Bug',
+    BUGS: 'Bugs',
     FOREST: 'Forest',
     PLAINS: 'Plains',
     JUNGLE: 'Jungle',
