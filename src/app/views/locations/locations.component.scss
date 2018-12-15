@@ -1,3 +1,5 @@
+@import '../../styles/_colors.scss';
+
 .locations-container {
     display: flex;
     justify-content: space-between;
@@ -6,15 +8,116 @@
     .animal-container {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
         align-items: center;
-        padding: 50px;
-        width: 200px;
-        border: 1px solid black;
+        margin: 35px;
+        width: 400px;
+        border: 2px solid black;
 
-        .animal-data {
+        .border-top {
+            border-top: 2px solid black;
+        }
+
+        .border-bottom {
+            border-bottom: 2px solid black;
+        }
+
+        .progress-bar {
+            border-top: 2px solid black;
+            height: 30px;
+            width: 100%;
+            background: lightgray;
+          }
+          
+          .loaded {
+            height: 100%;
+            width: 100%;
+            background: $blue;
+            animation: 10s linear infinite loading;
+            transform-origin: 0%;
+          }
+          
+          @keyframes loading {
+            0% {
+              transform: scaleX(0);
+            }
+            100% {
+              transform: scaleX(100%);
+            }
+          }
+
+        .animal-row {
             display: flex;
-            margin: 10px;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 30px;
+            color: $blue;
+            font-weight: 600;
+
+            &.upgrade:hover {
+                color: white;
+                background-color: $blue;
+                cursor: pointer;
+            }
+
+            .buy-details {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 70%;
+                height: 100%;
+            }
+
+            .multiplier {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 10%;
+                height: 100%;
+                border-right: 1px solid black;
+                border-left: 1px solid black;
+                cursor: pointer;
+
+                &:hover {
+                    color: white;
+                    background-color: $blue;
+                }
+
+                &:first-child {
+                    border-right: none;
+                }
+
+                &:last-child {
+                    border-right: none;
+                }
+            }
+
+            &.title {
+                background-color: grey;
+                color: lightblue;
+            }
+        }
+
+        .animal-details {
+            display: flex;
+            width: 100%;
+            flex: 1;
+
+            .animal-data {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                align-items: center;
+                width: 100%;
+
+                .data-row {
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-around;
+                    align-content: center;
+                }
+            }
         }
     }
 }

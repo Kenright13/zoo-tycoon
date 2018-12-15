@@ -9,6 +9,7 @@ import { Location } from '../../classes/location';
 })
 export class HeaderComponent implements OnInit {
   @Input() location: Location;
+  @Input() money: number;
 
   title = 'Dashboard';
 

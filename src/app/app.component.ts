@@ -13,7 +13,7 @@ import { Business } from './classes/business';
 
 export class AppComponent {
   ngOnInit() {
-    this.setCurrentLocation('Kansas City');
+    this.setCurrentLocation("Kansas City");
     this.isLocation();
   }
 
@@ -26,7 +26,7 @@ export class AppComponent {
     locations: LOCATIONS
   }
 
-  currentLocation: 'string';
+  currentLocation: string;
   title = 'zoo-tycoon';
 
   setBusinessName(name: string): void {
@@ -35,6 +35,10 @@ export class AppComponent {
 
   setCurrentLocation(location: string): void {
     this.currentLocation = location;
+  }
+
+  addMoney(amount: number) {
+    this.business.money += amount;
   }
 
   isLocation(): boolean {

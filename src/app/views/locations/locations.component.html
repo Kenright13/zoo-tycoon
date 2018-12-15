@@ -1,7 +1,59 @@
 <div class="locations-container">
   <div *ngFor="let animal of location.zoo.animals" class="animal-container">
-    <div class="animal-data">Name: {{ animal.name }}</div>
-    <div class="animal-data">Type: {{ animal.type }}</div>
-    <div class="animal-data">Count: {{ animal.count }}</div>
+    <div class="animal-row title border-bottom">{{ animal.name }}s</div>
+    <div class="animal-details">
+      <img [src]="animal.image" />
+      <div class="animal-data">
+        <div class="data-row">
+            <div class="data-item">
+                <b>Death: </b> 
+                {{ calculateDeath(animal.death, animal.count) }}%
+              </div>
+              <div class="data-item">
+                <b>Birth: </b> 
+                {{ calculateBirth(animal.birth, animal.count) }}%
+              </div>
+        </div>
+        <div class="data-row">
+            <div class="data-item">
+                <b>Mating: </b> 
+                {{ animal.mateSpeed / 1000 }}s
+              </div>
+              <div class="data-item">
+                <b>Food: </b> 
+                0
+              </div>
+        </div>
+        <div class="data-row">
+            <div class="data-item">
+                <b>Happiness: </b> 
+                0%
+              </div>
+              <div class="data-item">
+                <b>{{ animal.name }}s: </b> 
+                {{ animal.count }}
+              </div>
+        </div>
+       
+      </div>
+    </div>
+    <div class="progress-bar">
+        <div class="loaded"></div>
+      </div>
+    <div class="animal-row border-top">
+      <div class="buy-details">Buy {{ animal.name }} {{ animal.price | currency }}</div>
+      <div class="multiplier" (click)="buyAnimal(animal, 1)">x1</div>
+      <div class="multiplier" (click)="buyAnimal(animal, 10)">x10</div>
+      <div class="multiplier" (click)="buyAnimal(animal, 100)">x100</div>
+    </div>
+    <div class="animal-row border-top">
+      <div class="buy-details">Sell {{ animal.name }} {{ animal.price / 2 | currency }}</div>
+      <div class="multiplier" (click)="sellAnimal(animal, 1)">x1</div>
+      <div class="multiplier" (click)="sellAnimal(animal, 10)">x10</div>
+      <div class="multiplier" (click)="sellAnimal(animal, 100)">x100</div>
+    </div>
+    <div class="upgrade animal-row border-top">
+      Upgrade {{ animal.name }}
+    </div>
   </div>
 </div>

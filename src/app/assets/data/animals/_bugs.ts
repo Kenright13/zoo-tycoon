@@ -11,6 +11,12 @@ export const BUGS: Array<Animal> = [
     death: .0005,
     birth: .001,
     mateSpeed: 10000,
+    capacity: 1000,
+    image: 'https://source.unsplash.com/random/100x200',
+    birthMultiplier: 1,
+    deathMultiplier: 1,
+    mateMultiplier: 1,
+    capacityMultiplier: 1,
     diet: {
       type: DIET_TYPES.HERBIVORE
     }
@@ -23,6 +29,12 @@ export const BUGS: Array<Animal> = [
     death: .001,
     birth: .001,
     mateSpeed: 20000,
+    capacity: 1000,
+    image: 'https://source.unsplash.com/random/100x200',
+    birthMultiplier: 1,
+    deathMultiplier: 1,
+    mateMultiplier: 1,
+    capacityMultiplier: 1,
     diet: {
       type: DIET_TYPES.HERBIVORE
     }

@@ -1,10 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-header [location]="getCurrentLocation()"></app-header>
+<app-header [money]="business.money" [location]="getCurrentLocation()"></app-header>
 <div class="page-wrapper" *ngIf="!isLocation()">
     <app-home [totalMoney]="business.money" (chooseLocation)="setCurrentLocation($event)" (named)="setBusinessName($event)"></app-home>
 </div>
 <div class="page-wrapper" *ngIf="isLocation()">
-    <app-locations [location]="getCurrentLocation()"></app-locations>
+    <app-locations (addMoney)="addMoney($event)" [money]="business.money" [location]="getCurrentLocation()"></app-locations>
 </div>
 
 <app-footer [name]="business.name"></app-footer>
