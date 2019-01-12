@@ -10,6 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { HomeComponent } from './views/home/home.component';
 import { LocationsComponent } from './views/locations/locations.component';
+import { AnimalComponent } from './components/animal/animal.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LocationsComponent } from './views/locations/locations.component';
     HeaderComponent,
     NavigationComponent,
     HomeComponent,
-    LocationsComponent
+    LocationsComponent,
+    AnimalComponent
   ],
   imports: [
     BrowserModule,
